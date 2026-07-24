@@ -4,9 +4,13 @@ use App\Http\Controllers\GarmentPhotoController;
 use App\Http\Controllers\PlanController;
 use Illuminate\Support\Facades\Route;
 
-// ====== ARMADIO — aggiungi queste rotte al tuo routes/web.php ======
+// ====== ARMADIO ======
 
-Route::view('/armadio', 'armadio');
+Route::view('/', 'home')->name('home');
+Route::view('/categorie', 'categorie')->name('categorie');
+Route::view('/storico', 'storico')->name('storico');
+Route::view('/bagaglio', 'bagaglio')->name('bagaglio');
+Route::view('/armadio', 'armadio')->name('armadio');   // pagina vuota, a disposizione
 
 Route::prefix('api')->group(function () {
     Route::get('/plans', [PlanController::class, 'index']);
